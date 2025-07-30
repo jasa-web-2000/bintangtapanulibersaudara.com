@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { config } from "@/lib/config";
+import { appConfig } from "@/lib/config";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,13 +11,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: config.APP_NAME,
-  description: config.APP_NAME,
-  authors: [{ name: config.DEVELOPER.name, url: config.DEVELOPER.url }],
-  creator: config.DEVELOPER.name,
-  publisher: config.DEVELOPER.name,
+  title: appConfig.APP_NAME,
+  description: appConfig.APP_NAME,
+  authors: [{ name: appConfig.DEVELOPER.name, url: appConfig.DEVELOPER.url }],
+  creator: appConfig.DEVELOPER.name,
+  publisher: appConfig.DEVELOPER.name,
   generator: "Next.js",
-  applicationName: config.APP_NAME,
+  applicationName: appConfig.APP_NAME,
 
   robots: {
     index: true,
@@ -34,41 +34,30 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "icon",
-        url: "/favicon-16x16.png",
-        sizes: "16x16",
-      },
-      {
-        rel: "icon",
-        url: "/favicon-32x32.png",
-        sizes: "32x32",
-      },
-      {
-        rel: "icon",
-        url: "/favicon-48x48.png",
-        sizes: "48x48",
-      },
-    ],
   },
 
   openGraph: {
-    title: config.APP_NAME,
-    description: config.APP_NAME,
+    title: appConfig.APP_NAME,
+    description: appConfig.APP_NAME,
     url: "https://travelterdekat.com",
-    siteName: config.APP_NAME,
+    siteName: appConfig.APP_NAME,
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Travel Terdekat Open Graph Image",
+        url: "/travel-terdekat-logo-blue.jpg",
       },
     ],
     locale: "id_ID",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Next.js",
+    description: "The React Framework for the Web",
+    siteId: "1467726470533754880",
+    creator: "@nextjs",
+    creatorId: "1467726470533754880",
+    images: ["https://nextjs.org/og.png"], // Must be an absolute URL
   },
 };
 

@@ -1,8 +1,9 @@
-import { Metadata, ResolvedMetadata } from "next";
+import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Travel",
 };
-export default function Home() {
-  return <p>Test</p>;
+export default function page() {
+  return <div>travel</div>;
 }

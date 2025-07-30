@@ -8,7 +8,7 @@ export interface AppConfig {
   DEVELOPER: Developer;
   GOOGLE_SITE_VERIFICATION: string;
 }
-export const config: AppConfig = {
+export const appConfig: AppConfig = {
   APP_NAME: "Travel Terdekat",
   DEVELOPER: { name: "Dion Zebua", url: "https://dionzebua.com" },
   GOOGLE_SITE_VERIFICATION: "your-google-site-verification-code",
