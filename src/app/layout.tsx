@@ -11,7 +11,6 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  
   title: config.APP_NAME,
   description: config.APP_NAME,
   authors: [{ name: config.DEVELOPER.name, url: config.DEVELOPER.url }],
@@ -71,7 +70,6 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
-
 };
 
 export default function RootLayout({
@@ -83,7 +81,9 @@ export default function RootLayout({
     <html
       lang="id"
       className="scroll-smooth">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <div className="bg-red-200">{children}</div>
+      </body>
     </html>
   );
 }
