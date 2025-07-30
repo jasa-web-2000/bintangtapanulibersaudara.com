@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -69,10 +70,6 @@ export const metadata: Metadata = {
     ],
     locale: "id_ID",
     type: "website",
-  },
-
-  verification: {
-    google: config.GOOGLE_SITE_VERIFICATION,
   },
 
 };
