@@ -10,7 +10,7 @@ export interface AppConfig {
   GOOGLE_SITE_VERIFICATION: string;
 }
 export const appConfig: AppConfig = {
-  APP_URL: "https://travelterdekat.com",
+  APP_URL: "https://travelterdekat.web.id",
   APP_NAME: "Travel Terdekat",
   DEVELOPER: { name: "Dion Zebua", url: "https://dionzebua.com" },
   GOOGLE_SITE_VERIFICATION: "your-google-site-verification-code",
