@@ -11,6 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(appConfig.APP_URL),
   title: appConfig.APP_NAME,
   description: appConfig.APP_NAME,
   authors: [{ name: appConfig.DEVELOPER.name, url: appConfig.DEVELOPER.url }],
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: appConfig.APP_NAME,
     description: appConfig.APP_NAME,
-    url: "https://travelterdekat.com",
+    url: appConfig.APP_URL,
     siteName: appConfig.APP_NAME,
     images: [
       {
@@ -48,16 +49,6 @@ export const metadata: Metadata = {
     ],
     locale: "id_ID",
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    siteId: "1467726470533754880",
-    creator: "@nextjs",
-    creatorId: "1467726470533754880",
-    images: ["https://nextjs.org/og.png"], // Must be an absolute URL
   },
 };
 
