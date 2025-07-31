@@ -1,5 +1,5 @@
 import { appConfig } from "@/lib/config";
-import { appGenerateMetadata } from "@/lib/metadata";
+import { appGenerateMetadata } from "@/lib/index";
 import { Metadata } from "next";
 
 interface Seo {
