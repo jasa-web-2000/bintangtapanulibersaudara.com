@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { appConfig } from "@/lib/config";
+import { appGenerateMetadata } from "@/lib/metadata";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,47 +10,8 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(appConfig.APP_URL),
-  title: appConfig.APP_NAME,
-  description: appConfig.APP_NAME,
-  authors: [{ name: appConfig.DEVELOPER.name, url: appConfig.DEVELOPER.url }],
-  creator: appConfig.DEVELOPER.name,
-  publisher: appConfig.DEVELOPER.name,
-  generator: "Next.js",
-  applicationName: appConfig.APP_NAME,
+export const metadata: Promise<Metadata> = appGenerateMetadata({});
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-  },
-
-  openGraph: {
-    title: appConfig.APP_NAME,
-    description: appConfig.APP_NAME,
-    url: appConfig.APP_URL,
-    siteName: appConfig.APP_NAME,
-    images: [
-      {
-        url: "/travel-terdekat-logo-blue.jpg",
-      },
-    ],
-    locale: "id_ID",
-    type: "website",
-  },
-};
 
 export default function RootLayout({
   children,
