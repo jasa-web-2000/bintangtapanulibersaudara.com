@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { appConfig } from "./config";
+import { appConfig } from "./index";
 
 export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
   const metadata: Metadata = {
@@ -37,7 +37,7 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
       description: input?.description ?? appConfig.APP_NAME,
       url: input?.openGraph?.url ?? appConfig.APP_URL,
       siteName: appConfig.APP_NAME,
-      images: input?.openGraph?.images ?? [
+      images: [
         {
           url: "/travel-terdekat-logo-blue.jpg",
           width: 672,
