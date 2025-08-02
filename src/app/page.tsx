@@ -1,11 +1,7 @@
 import { appConfig } from "@/lib/config";
 import { appGenerateMetadata } from "@/lib/index";
+import { Seo } from "@/types";
 import { Metadata } from "next";
-
-interface Seo {
-  title: string;
-  description: string;
-}
 
 const seo: Seo = {
   title: `${appConfig.APP_NAME} - Jasa Travel Murah dan Terpercaya`,

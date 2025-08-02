@@ -15,7 +15,7 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
     generator: "Next.js",
     applicationName: appConfig.APP_NAME,
 
-    robots: {
+    robots: input?.robots ?? {
       index: true,
       follow: true,
       googleBot: {
