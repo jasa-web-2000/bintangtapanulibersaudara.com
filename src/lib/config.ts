@@ -13,7 +13,8 @@ interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  APP_URL: "http://localhost:3000",
+  APP_URL: "https://travelterdekat.web.id",
+  // APP_URL: "http://localhost:3000",
   APP_NAME: "Travel Terdekat",
   TELPHONE: "+62 882-8931-7870",
   EMAIL: "admin@travelterdekat.web.id",
