@@ -37,7 +37,7 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
       description: input?.description ?? appConfig.APP_NAME,
       url: input?.openGraph?.url ?? appConfig.APP_URL,
       siteName: appConfig.APP_NAME,
-      images: [
+      images: input?.openGraph?.images ?? [
         {
           url: "/travel-terdekat-logo-blue.jpg",
           width: 672,

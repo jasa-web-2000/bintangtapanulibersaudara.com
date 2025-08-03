@@ -13,9 +13,9 @@ interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  APP_URL: "https://travelterdekat.web.id",
+  APP_URL: "http://localhost:3000",
   APP_NAME: "Travel Terdekat",
-  TELPHONE: "+6288289317870",
+  TELPHONE: "+62 882-8931-7870",
   EMAIL: "admin@travelterdekat.web.id",
   DEVELOPER: { name: "Dion Zebua", url: "https://dionzebua.com" },
   GOOGLE_SITE_VERIFICATION: "your-google-site-verification-code",
