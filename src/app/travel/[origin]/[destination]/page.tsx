@@ -1,18 +1,50 @@
 "use server";
-import { appConfig, appGenerateMetadata } from "@/lib/index";
+import {
+  appConfig,
+  appGenerateMetadata,
+  capitalize,
+  findProvincesByRecommend,
+  findRegenciesByRecommend,
+} from "@/lib/index";
 import { Metadata } from "next";
-import { ParamsTravel, Seo, Travel } from "@/types";
-import { appGetTravel } from "@/lib/index";
+import { ParamsTravel, Seo } from "@/types";
+import { travel } from "@/lib/index";
 import { notFound } from "next/navigation";
+
+export default async function page({ params }: ParamsTravel) {
+  const { origin, destination } = await params;
+
+  const travelData = await travel({ origin, destination });
+  if (!travelData?.origin?.name || !travelData?.destination?.name) {
+    notFound();
+  }
+
+  const ProvincesRecomendationData = findProvincesByRecommend([
+    origin,
+    destination,
+  ]);
+
+  const RegenciesRecomendationData = findRegenciesByRecommend([
+    origin,
+    destination,
+  ]);
+
+  return <div>Travel</div>;
+}
 
 export async function generateMetadata({
   params,
 }: ParamsTravel): Promise<Metadata> {
   const { origin, destination } = await params;
 
+  const travelData = await travel({ origin, destination });
+
+  const title = `Travel ${travelData?.origin?.name} ${travelData?.destination?.name}`;
   const seo: Seo = {
-    title: `Travel - Jasa Travel Murah dan Terpercaya`,
-    description: `${appConfig.APP_NAME} akan membantu anda menemukan jasa travel yang murah dan terpercaya di sekitar anda.`,
+    title: `${capitalize(title)} - Jasa Travel Murah dan Terpercaya`,
+    description: `${capitalize(
+      title
+    )} akan membantu anda menemukan jasa travel yang murah dan terpercaya di sekitar anda.`,
   };
 
   return appGenerateMetadata({
@@ -31,19 +63,4 @@ export async function generateMetadata({
       ],
     },
   });
-}
-
-export default async function page({ params }: ParamsTravel) {
-  const { origin, destination } = await params;
-  const travelData = await appGetTravel({ origin, destination });
-
-  if (!travelData) {
-    // return null;
-    notFound();
-  }
-
-  // if (!travelData) {
-  //   return <div>Error loading travel data</div>;
-  // }
-  return <div>Travel</div>;
 }

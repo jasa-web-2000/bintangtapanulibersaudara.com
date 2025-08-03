@@ -11,6 +11,7 @@ interface AppConfig {
   DEVELOPER: Developer;
   GOOGLE_SITE_VERIFICATION: string;
 }
+
 export const appConfig: AppConfig = {
   APP_URL: "https://travelterdekat.web.id",
   APP_NAME: "Travel Terdekat",

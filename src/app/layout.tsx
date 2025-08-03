@@ -22,8 +22,7 @@ export default function RootLayout({
       lang="id"
       className="scroll-smooth">
       <body className={`${poppins.className} antialiased`}>
-        <div className="bg-red-200">{children}</div>
-
+        {children}
         {/* Product */}
         <script
           type="application/ld+json"
