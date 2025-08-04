@@ -53,7 +53,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       maxWidth: width,
     });
 
-    const buffer = await image.getBuffer("image/jpeg");
+    const buffer = await image.getBuffer("image/jpeg", { quality: 50 });
 
     return new NextResponse(buffer, {
       status: 200,
