@@ -1,6 +1,5 @@
 "use server";
 import {
-  appConfig,
   appGenerateMetadata,
   capitalize,
   findProvincesByRecommend,
@@ -10,7 +9,7 @@ import { Metadata } from "next";
 import { ParamsTravel, Seo } from "@/types";
 import { travel } from "@/lib/index";
 import { notFound } from "next/navigation";
-import { Jimp } from "jimp";
+import Image from "next/image";
 
 export default async function page({ params }: ParamsTravel) {
   const { origin, destination } = await params;
@@ -34,9 +33,12 @@ export default async function page({ params }: ParamsTravel) {
 
   return (
     <div>
-      <img
+      <Image
         src={`/travel/${origin}/${destination}/thumbnail.jpg`}
         alt={capitalize(title)}
+        title={capitalize(title)}
+        width={1300}
+        height={731}
       />
     </div>
   );

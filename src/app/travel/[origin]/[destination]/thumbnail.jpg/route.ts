@@ -2,7 +2,7 @@ import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
 import { SANS_128_WHITE, SANS_64_BLACK } from "jimp/fonts";
-import { notFound } from "next/navigation";
+
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
@@ -69,6 +69,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       },
     });
   } catch (error) {
-    return error;
+    if (!travelData?.origin?.name || !travelData?.destination?.name) {
+      return NextResponse.redirect(appConfig.APP_URL + error);
+    }
   }
 }
