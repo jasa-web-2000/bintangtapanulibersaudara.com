@@ -3,7 +3,7 @@ import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
 import { SANS_128_WHITE } from "jimp/fonts";
 import { NextResponse } from "next/server";
-import path from "path";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
