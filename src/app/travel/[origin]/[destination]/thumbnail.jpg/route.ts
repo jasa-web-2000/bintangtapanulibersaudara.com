@@ -1,15 +1,12 @@
 import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
-import { SANS_128_WHITE } from "jimp/fonts";
 
 import { NextResponse } from "next/server";
 import path, { dirname } from "path";
-import { fileURLToPath } from "url";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
   const { origin, destination } = await params;
-  const dir = path.join(path.dirname(fileURLToPath(import.meta.url)));
 
   const travelData = await travel({ origin, destination });
 
@@ -17,13 +14,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     return NextResponse.redirect(appConfig.APP_URL + "/not-found");
   }
 
-  // const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
-  const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
-  // const image = await Jimp.read(imagePath);
-
   try {
-    const image = await Jimp.read(imagePath);
-
+    const image = await Jimp.read(appConfig.APP_URL + "/thumbnail.jpg");
     const width = 1300;
     const height = 731;
 
@@ -32,12 +24,6 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     const fontTitle = await loadFont(
       path.resolve("./public/fonts/open-sans-128-white.fnt")
     );
-
-    // const title = [
-    //   "Agen Travel Agen Travel Agen Travel Agen Travel",
-    //   capitalize(travelData?.origin?.name),
-    //   capitalize(travelData?.destination?.name),
-    // ];
 
     image.print({
       font: fontTitle,
