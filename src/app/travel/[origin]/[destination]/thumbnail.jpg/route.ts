@@ -1,10 +1,14 @@
 import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
+import { SANS_128_WHITE } from "jimp/fonts";
 import { NextResponse } from "next/server";
+import path from "path";
+import { fileURLToPath } from "url";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
   const { origin, destination } = await params;
+  const dir = path.join(path.dirname(fileURLToPath(import.meta.url)));
 
   const travelData = await travel({ origin, destination });
 
@@ -24,10 +28,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
 
     image.resize({ w: width, h: height });
 
-    const fontTitle = await loadFont(
-      // path.resolve("./public/open-sans-128-white.fnt")
-      appConfig.APP_URL + "/open-sans-128-white.fnt"
-    );
+    const fontTitle = await loadFont(SANS_128_WHITE);
 
     // const title = [
     //   "Agen Travel Agen Travel Agen Travel Agen Travel",
@@ -50,20 +51,20 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       maxHeight: 530,
     });
 
-    const fontTelphone = await loadFont(
-      // path.resolve("./public/open-sans-64-black.fnt")
-      appConfig.APP_URL + "/open-sans-64-black.fnt"
-    );
-    image.print({
-      font: fontTelphone,
-      x: 0,
-      y: 590,
-      text: {
-        text: appConfig.TELPHONE,
-        alignmentX: HorizontalAlign.CENTER,
-      },
-      maxWidth: width,
-    });
+    // const fontTelphone = await loadFont(
+    //   // path.resolve("./public/fonts/open-sans-64-black.fnt")
+    //   appConfig.APP_URL + "/fonts/open-sans-64-black.fnt"
+    // );
+    // image.print({
+    //   font: fontTelphone,
+    //   x: 0,
+    //   y: 590,
+    //   text: {
+    //     text: appConfig.TELPHONE,
+    //     alignmentX: HorizontalAlign.CENTER,
+    //   },
+    //   maxWidth: width,
+    // });
 
     const buffer = await image.getBuffer("image/jpeg");
 
