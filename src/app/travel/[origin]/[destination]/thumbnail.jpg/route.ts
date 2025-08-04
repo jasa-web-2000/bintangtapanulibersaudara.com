@@ -24,10 +24,6 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       appConfig.APP_URL + "/fonts/open-sans-128-white.fnt"
     );
 
-    // const fontTitle = await loadFont(
-    //   path.resolve("./public/fonts/open-sans-128-white.fnt")
-    // );
-
     image.print({
       font: fontTitle,
       x: 50,
@@ -43,20 +39,19 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       maxHeight: 530,
     });
 
-    // const fontTelphone = await loadFont(
-    //   // path.resolve("./public/fonts/open-sans-64-black.fnt")
-    //   appConfig.APP_URL + "/fonts/open-sans-64-black.fnt"
-    // );
-    // image.print({
-    //   font: fontTelphone,
-    //   x: 0,
-    //   y: 590,
-    //   text: {
-    //     text: appConfig.TELPHONE,
-    //     alignmentX: HorizontalAlign.CENTER,
-    //   },
-    //   maxWidth: width,
-    // });
+    const fontTelphone = await loadFont(
+      appConfig.APP_URL + "/fonts/open-sans-64-black.fnt"
+    );
+    image.print({
+      font: fontTelphone,
+      x: 0,
+      y: 590,
+      text: {
+        text: appConfig.TELPHONE,
+        alignmentX: HorizontalAlign.CENTER,
+      },
+      maxWidth: width,
+    });
 
     const buffer = await image.getBuffer("image/jpeg");
 
