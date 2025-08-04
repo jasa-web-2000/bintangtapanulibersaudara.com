@@ -1,7 +1,6 @@
 import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
-import path from "path";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
@@ -14,7 +13,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
   }
 
   // const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
-  const imagePath = path.resolve("/public/thumbnail.jpg");
+  const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
   // const image = await Jimp.read(imagePath);
 
   try {
@@ -26,7 +25,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     image.resize({ w: width, h: height });
 
     const fontTitle = await loadFont(
-      path.resolve("/public/open-sans-128-white.fnt")
+      // path.resolve("./public/open-sans-128-white.fnt")
+      appConfig.APP_URL + "/open-sans-128-white.fnt"
     );
 
     // const title = [
@@ -51,7 +51,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     });
 
     const fontTelphone = await loadFont(
-      path.resolve("./public/open-sans-64-black.fnt")
+      // path.resolve("./public/open-sans-64-black.fnt")
+      appConfig.APP_URL + "/open-sans-64-black.fnt"
     );
     image.print({
       font: fontTelphone,
