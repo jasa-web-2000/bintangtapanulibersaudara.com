@@ -29,7 +29,9 @@ export async function GET(request: Request, { params }: ParamsTravel) {
 
     image.resize({ w: width, h: height });
 
-    const fontTitle = await loadFont(SANS_128_WHITE);
+    const fontTitle = await loadFont(
+      path.resolve("./public/fonts/open-sans-128-white.fnt")
+    );
 
     // const title = [
     //   "Agen Travel Agen Travel Agen Travel Agen Travel",
