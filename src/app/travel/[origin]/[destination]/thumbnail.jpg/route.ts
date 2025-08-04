@@ -20,10 +20,13 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     const height = 731;
 
     image.resize({ w: width, h: height });
-
     const fontTitle = await loadFont(
-      path.resolve("./public/fonts/open-sans-128-white.fnt")
+      appConfig.APP_URL + "/fonts/open-sans-128-white.fnt"
     );
+
+    // const fontTitle = await loadFont(
+    //   path.resolve("./public/fonts/open-sans-128-white.fnt")
+    // );
 
     image.print({
       font: fontTitle,
