@@ -69,6 +69,6 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       },
     });
   } catch (error) {
-    return notFound();
+    return error;
   }
 }
