@@ -1,7 +1,6 @@
 import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
-import { SANS_128_WHITE, SANS_64_BLACK } from "jimp/fonts";
 import path from "path";
 import { NextResponse } from "next/server";
 
@@ -26,7 +25,9 @@ export async function GET(request: Request, { params }: ParamsTravel) {
 
     image.resize({ w: width, h: height });
 
-    const fontTitle = await loadFont(SANS_128_WHITE);
+    const fontTitle = await loadFont(
+      path.resolve("./public/open-sans-128-white.fnt")
+    );
 
     // const title = [
     //   "Agen Travel Agen Travel Agen Travel Agen Travel",
@@ -49,7 +50,9 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       maxHeight: 530,
     });
 
-    const fontTelphone = await loadFont(SANS_64_BLACK);
+    const fontTelphone = await loadFont(
+      path.resolve("./public/open-sans-64-black.fnt")
+    );
     image.print({
       font: fontTelphone,
       x: 0,
