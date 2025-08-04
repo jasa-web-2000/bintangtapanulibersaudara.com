@@ -68,7 +68,7 @@ export async function generateMetadata({
       description: seo.description,
       images: [
         {
-          url: "/travel-terdekat-logo-blue.jpgg",
+          url: `travel/${origin}/${destination}/thumbnail.jpg`,
           width: 672,
           height: 672,
           alt: `${capitalize(title)} Termurah, Terpercaya, Jadwal 24 Jam`,
