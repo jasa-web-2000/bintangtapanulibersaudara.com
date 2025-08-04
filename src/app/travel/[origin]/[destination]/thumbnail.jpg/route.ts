@@ -15,7 +15,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
   }
 
   try {
-    const image = await Jimp.read(appConfig.APP_URL + "/thumbnail.jpg");
+    const image = await Jimp.read(appConfig.APP_URL + "/images/thumbnail.jpg");
     const width = 1300;
     const height = 731;
 

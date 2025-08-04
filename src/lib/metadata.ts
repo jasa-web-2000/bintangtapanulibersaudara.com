@@ -28,8 +28,8 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
     },
 
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
+      icon: "/images/favicon.ico",
+      shortcut: "/images/favicon.ico",
     },
 
     openGraph: {
@@ -39,7 +39,7 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
       siteName: appConfig.APP_NAME,
       images: input?.openGraph?.images ?? [
         {
-          url: "/travel-terdekat-logo-blue.jpg",
+          url: "/images/travel-terdekat-logo-blue.jpg",
           width: 672,
           height: 672,
           alt: appConfig.APP_NAME,
@@ -55,7 +55,7 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
       description: input?.description ?? appConfig.APP_NAME,
       images: input?.openGraph?.images ?? [
         {
-          url: "/travel-terdekat-logo-blue.jpg",
+          url: "/images/travel-terdekat-logo-blue.jpg",
           width: 672,
           height: 672,
           alt: appConfig.APP_NAME,
