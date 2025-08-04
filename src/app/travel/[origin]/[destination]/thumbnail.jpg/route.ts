@@ -30,7 +30,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     image.resize({ w: width, h: height });
 
     const fontTitle = await loadFont(
-      path.resolve("./fonts/open-sans-128-white.fnt")
+      path.resolve("./src/assets/fonts/open-sans-128-white.fnt")
     );
 
     // const title = [
@@ -55,8 +55,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     });
 
     // const fontTelphone = await loadFont(
-    //   // path.resolve("./fonts/open-sans-64-black.fnt")
-    //   appConfig.APP_URL + "/fonts/open-sans-64-black.fnt"
+    //   // path.resolve("./src/assets/fonts/open-sans-64-black.fnt")
+    //   appConfig.APP_URL + "/src/assets/fonts/open-sans-64-black.fnt"
     // );
     // image.print({
     //   font: fontTelphone,
