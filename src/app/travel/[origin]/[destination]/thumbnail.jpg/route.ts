@@ -14,7 +14,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
   }
 
   // const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
-  const imagePath = path.resolve("./public/thumbnail.jpg");
+  const imagePath = path.resolve("/public/thumbnail.jpg");
   // const image = await Jimp.read(imagePath);
 
   try {
@@ -26,7 +26,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     image.resize({ w: width, h: height });
 
     const fontTitle = await loadFont(
-      path.resolve("./public/open-sans-128-white.fnt")
+      path.resolve("/public/open-sans-128-white.fnt")
     );
 
     // const title = [
