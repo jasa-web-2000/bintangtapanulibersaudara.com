@@ -2,7 +2,7 @@ import { appConfig, capitalize, travel } from "@/lib";
 import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
 import { SANS_128_WHITE, SANS_64_BLACK } from "jimp/fonts";
-
+import path from "path";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
@@ -14,7 +14,9 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     return NextResponse.redirect(appConfig.APP_URL + "/not-found");
   }
 
-  const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
+  // const imagePath = appConfig.APP_URL + "/thumbnail.jpg";
+  const imagePath = path.resolve("./public/thumbnail.jpg");
+  // const image = await Jimp.read(imagePath);
 
   try {
     const image = await Jimp.read(imagePath);
@@ -69,8 +71,16 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       },
     });
   } catch (error) {
-    if (!travelData?.origin?.name || !travelData?.destination?.name) {
-      return NextResponse.redirect(appConfig.APP_URL + error);
-    }
+    // return NextResponse.redirect(appConfig.APP_URL + error);
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+
+    return new NextResponse(message, {
+      status: 500,
+      headers: {
+        "Content-Type": "text/plain",
+        "Cache-Control": "no-store",
+      },
+    });
   }
 }
