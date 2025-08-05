@@ -50,6 +50,9 @@ export async function generateMetadata({
   const { origin, destination } = await params;
 
   const travelData = await travel({ origin, destination });
+  if (!travelData?.origin?.name || !travelData?.destination?.name) {
+    notFound();
+  }
 
   const title = `Travel ${travelData?.origin?.name} ${travelData?.destination?.name}`;
 

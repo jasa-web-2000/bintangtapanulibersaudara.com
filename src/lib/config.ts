@@ -6,18 +6,18 @@ interface Developer {
 interface AppConfig {
   APP_URL: string;
   APP_NAME: string;
+  APP_TAGLINE: string;
   TELPHONE: string;
   EMAIL: string;
   DEVELOPER: Developer;
-  GOOGLE_SITE_VERIFICATION: string;
 }
 
 export const appConfig: AppConfig = {
-  // APP_URL: "https://travelterdekat.web.id",
+  // APP_URL: "https://bintangtapanulibersaudara.com",
   APP_URL: "http://localhost:3000",
-  APP_NAME: "Travel Terdekat",
-  TELPHONE: "+62 882-8931-7870",
-  EMAIL: "admin@travelterdekat.web.id",
+  APP_NAME: "CV. Bintang Tapanuli Bersaudara",
+  APP_TAGLINE: "Travel Sumatra Terbaik",
+  TELPHONE: "+62 813-1544-403",
+  EMAIL: "admin@bintangtapanulibersaudara.com",
   DEVELOPER: { name: "Dion Zebua", url: "https://dionzebua.com" },
-  GOOGLE_SITE_VERIFICATION: "your-google-site-verification-code",
 };

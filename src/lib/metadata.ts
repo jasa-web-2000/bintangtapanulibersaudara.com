@@ -4,8 +4,9 @@ import { appConfig } from "./index";
 export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
   const metadata: Metadata = {
     metadataBase: new URL(appConfig.APP_URL),
-    title: input?.title ?? appConfig.APP_NAME,
-    description: input?.description ?? appConfig.APP_NAME,
+    title: input?.title ?? appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
+    description:
+      input?.description ?? appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
     alternates: {
       canonical: input?.openGraph?.url ?? appConfig.APP_URL,
     },
@@ -33,13 +34,15 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
     },
 
     openGraph: {
-      title: input?.title ?? appConfig.APP_NAME,
-      description: input?.description ?? appConfig.APP_NAME,
+      title: input?.title ?? appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
+      description:
+        input?.description ??
+        appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
       url: input?.openGraph?.url ?? appConfig.APP_URL,
       siteName: appConfig.APP_NAME,
       images: input?.openGraph?.images ?? [
         {
-          url: "/images/travel-terdekat-logo-blue.jpg",
+          url: "/images/logo.jpg",
           width: 672,
           height: 672,
           alt: appConfig.APP_NAME,
@@ -51,11 +54,13 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
 
     twitter: {
       card: "summary_large_image",
-      title: input?.title ?? appConfig.APP_NAME,
-      description: input?.description ?? appConfig.APP_NAME,
+      title: input?.title ?? appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
+      description:
+        input?.description ??
+        appConfig.APP_TAGLINE + " - " + appConfig.APP_NAME,
       images: input?.openGraph?.images ?? [
         {
-          url: "/images/travel-terdekat-logo-blue.jpg",
+          url: "/images/logo.jpg",
           width: 672,
           height: 672,
           alt: appConfig.APP_NAME,

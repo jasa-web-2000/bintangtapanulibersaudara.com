@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { appGenerateMetadata, schema } from "@/lib/index";
+import { Header } from "@/components";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,13 +18,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html
       lang="id"
       className="scroll-smooth">
       <body className={`${poppins.className} antialiased`}>
+        {/* Header */}
+        <Header />
+        {/* Header */}
+        
+
         {children}
-        {/* Product */}
+
+        {/* Product SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -36,7 +44,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Site */}
+        {/* Site SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -44,7 +52,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Local Business */}
+        {/* Local Business SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -55,7 +63,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* FAQ */}
+        {/* FAQ SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

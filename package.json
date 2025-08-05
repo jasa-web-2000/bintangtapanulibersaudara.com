@@ -1,5 +1,5 @@
 {
-  "name": "travelterdekat.web.id",
+  "name": "bintangtapanulibersaudara.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,8 @@
     "push": "git add -A && git commit -m \"malas ngoding, paham 🖐\" && git push -u origin main"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.14",
+    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "jimp": "^1.6.0",

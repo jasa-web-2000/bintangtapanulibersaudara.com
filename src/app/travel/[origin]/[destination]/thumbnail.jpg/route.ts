@@ -3,7 +3,6 @@ import { ParamsTravel } from "@/types";
 import { HorizontalAlign, Jimp, loadFont, VerticalAlign } from "jimp";
 
 import { NextResponse } from "next/server";
-import path, { dirname } from "path";
 
 export async function GET(request: Request, { params }: ParamsTravel) {
   const { origin, destination } = await params;
