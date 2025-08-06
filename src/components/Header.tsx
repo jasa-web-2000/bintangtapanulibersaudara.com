@@ -16,6 +16,7 @@ export default function Header() {
             href="/"
             title={appConfig.APP_NAME}>
             <Image
+              priority={true}
               className="w-auto"
               title={appConfig.APP_NAME}
               src="/images/logo.png"
@@ -29,9 +30,9 @@ export default function Header() {
 
           <Popover>
             <PopoverTrigger>
-              <Button size="icon">
-                <AlignRight />
-              </Button>
+              {/* <Button size="icon"> */}
+              <AlignRight />
+              {/* </Button> */}
             </PopoverTrigger>
             <PopoverContent>{/* <Nav /> */}</PopoverContent>
           </Popover>
