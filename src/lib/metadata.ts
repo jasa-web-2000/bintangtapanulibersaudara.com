@@ -29,8 +29,8 @@ export async function appGenerateMetadata(input: Metadata): Promise<Metadata> {
     },
 
     icons: {
-      icon: "/images/favicon.ico",
-      shortcut: "/images/favicon.ico",
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
     },
 
     openGraph: {
