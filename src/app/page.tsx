@@ -16,7 +16,7 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
     description: seo.description,
     images: [
       {
-        url: "/travel-terdekat-logo-blue.jpg",
+        url: "/images/logo.jpg",
         width: 672,
         height: 672,
         alt: appConfig.APP_NAME,

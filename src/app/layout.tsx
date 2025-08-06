@@ -11,14 +11,11 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Promise<Metadata> = appGenerateMetadata({});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html
       lang="id"
@@ -27,7 +24,6 @@ export default function RootLayout({
         {/* Header */}
         <Header />
         {/* Header */}
-        
 
         {children}
 
