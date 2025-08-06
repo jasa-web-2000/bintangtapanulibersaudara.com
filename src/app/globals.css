@@ -45,13 +45,13 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(96.8% 0.007 247.896);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.23 0.07 283.42);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -117,10 +117,27 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-slate-700;
   }
+
+  button,
+  a {
+    @apply cursor-pointer;
+  }
+
+  a { 
+    @apply hover:text-indigo-950 text-slate-700 hover:text-shadow-2xs;
+  }
+
+  /* a { 
+    @apply color-text
+  } */
 }
 
 @utility my-container {
   @apply w-full max-w-7xl mx-auto px-5;
+}
+
+@utility bg-container {
+  @apply absolute bg-[url(/images/background-home.jpg)] bg-cover bg-center w-full h-full bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-950/85 before:to-indigo-950/95 before:content-[''];
 }
