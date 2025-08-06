@@ -13,8 +13,8 @@ interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  // APP_URL: "https://bintangtapanulibersaudara.com",
-  APP_URL: "http://localhost:3000",
+  APP_URL: "https://bintangtapanulibersaudara.com",
+  // APP_URL: "http://localhost:3000",
   APP_NAME: "CV. Bintang Tapanuli Bersaudara",
   APP_TAGLINE: "Travel Sumatra Terbaik",
   TELPHONE: "+62 813-1544-403",
