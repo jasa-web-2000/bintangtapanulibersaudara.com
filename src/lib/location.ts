@@ -17,9 +17,9 @@ export function findDistrictsByIds(ids: string[]): Districts[] {
 
 export function findLocationById(id: string): Location | null {
   const found =
-    id <= "51"
+    +id <= 51
       ? provinces.find((p) => p.id === id)
-      : id <= "5171"
+      : +id <= 5171
       ? regencies.find((r) => r.id === id)
       : districts.find((d) => d.id === id);
 

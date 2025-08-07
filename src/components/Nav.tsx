@@ -12,17 +12,17 @@ export function Nav() {
         Beranda
       </Link>
       <Link
-        href="/"
+        href="/travel"
         title="Travel">
         Travel
       </Link>
       <Link
-        href="/"
+        href="/galeri"
         title="Galeri">
         Galeri
       </Link>
       <Link
-        href="/"
+        href="/kontak"
         title="Kontak">
         Kontak
       </Link>
@@ -34,7 +34,7 @@ export function Nav() {
           href={whatsapp()}
           title="whatsapp"
           target="_blank">
-          <MessageCircleMore /> Kontak
+          <MessageCircleMore /> Pesan
         </Link>
       </Button>
     </nav>

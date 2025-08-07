@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className="scroll-smooth ">
+      className="scroll-smooth">
       <body
         className={`${poppins.className} antialiased w-full h-dvh !overflow-visible`}>
         {/* Header */}

@@ -21,19 +21,22 @@ export default async function page({ params }: ParamsTravel) {
 
   const title = `Travel ${travelData?.origin?.name} ${travelData?.destination?.name}`;
 
-  const ProvincesRecomendationData = findProvincesByRecommend([
-    origin,
-    destination,
-  ]);
+  // const ProvincesRecomendationData = findProvincesByRecommend([
+  //   origin,
+  //   destination,
+  // ]);
 
-  const RegenciesRecomendationData = findRegenciesByRecommend([
-    origin,
-    destination,
-  ]);
+  // const RegenciesRecomendationData = findRegenciesByRecommend([
+  //   origin,
+  //   destination,
+  // ]);
 
   return (
     <div>
+      {travelData?.origin?.name}
+      {travelData?.destination?.name}
       <Image
+        priority={true}
         src={`/travel/${origin}/${destination}/thumbnail.jpg`}
         alt={capitalize(title)}
         title={capitalize(title)}
