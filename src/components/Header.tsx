@@ -1,12 +1,11 @@
 import { appConfig } from "@/lib";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Nav from "./Nav";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui";
 import { AlignRight } from "lucide-react";
+import { Nav } from "./Nav";
 
-export default function Header() {
+export function Header() {
   return (
     <>
       <header className="my-container bg-white top-0 sticky z-[99] shadow-lg">
@@ -42,7 +41,9 @@ export default function Header() {
                 />
                 {/* </Button> */}
               </PopoverTrigger>
-              <PopoverContent className="pt-5 pb-6"><Nav /></PopoverContent>
+              <PopoverContent className="pt-5 pb-6 block md:hidden">
+                <Nav />
+              </PopoverContent>
             </Popover>
           </div>
         </div>

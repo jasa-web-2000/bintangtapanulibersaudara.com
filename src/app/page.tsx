@@ -1,5 +1,5 @@
-import { appConfig } from "@/lib/config";
-import { appGenerateMetadata } from "@/lib/index";
+import { Hero } from "@/components/home";
+import { appGenerateMetadata, appConfig } from "@/lib";
 import { Seo } from "@/types";
 import { Metadata } from "next";
 
@@ -26,5 +26,9 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
 });
 
 export default function page() {
-  return <p>home</p>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
