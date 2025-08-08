@@ -1,4 +1,4 @@
-import { appConfig } from "../index";
+import { appConfig } from "@/lib";
 
 interface Site {
   "@context": string;

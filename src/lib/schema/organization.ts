@@ -1,4 +1,4 @@
-import { appConfig } from "../index";
+import { appConfig } from "@/lib";
 
 interface PostalAddress {
   "@type": string;
