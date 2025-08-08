@@ -8,7 +8,7 @@ interface AppConfig {
   APP_NAME: string;
   APP_TAGLINE: string;
   TELPHONE: string;
-  // EMAIL: string;
+  EMAIL: string;
   ADDRESS: string;
   GOOGLE_MAP: string;
   DEVELOPER: Developer;
@@ -20,7 +20,7 @@ export const appConfig: AppConfig = {
   APP_NAME: "CV. Bintang Tapanuli Bersaudara",
   APP_TAGLINE: "Travel Sumatra Terbaik",
   TELPHONE: "+62 813-1544-403",
-  // EMAIL: "admin@bintangtapanulibersaudara.com",
+  EMAIL: "admin@bintangtapanulibersaudara.com",
   ADDRESS:
     "Jl. Garuda Sakti KM 6, Gang Kartini No. 5, Desa Karya Indah, Kec. Tapung, Kabupaten Kampar, Riau, 28464",
   GOOGLE_MAP:
