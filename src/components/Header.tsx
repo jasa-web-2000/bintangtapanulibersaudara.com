@@ -1,29 +1,13 @@
-import { appConfig } from "@/lib";
-import Image from "next/image";
-import Link from "next/link";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui";
 import { AlignRight } from "lucide-react";
-import { Nav } from "./Nav";
+import { Logo, Nav } from "@/components";
 
 export function Header() {
   return (
     <>
       <header className="my-container bg-white top-0 sticky z-[99] shadow-lg">
         <div className="flex justify-between">
-          <Link
-            className="h-auto w-[calc(40px+5vw)] min-w-11 max-w-16 block"
-            href="/"
-            title={appConfig.APP_NAME}>
-            <Image
-              priority={true}
-              className="w-auto"
-              title={appConfig.APP_NAME}
-              src="/images/logo.png"
-              alt={`Logo ${appConfig.APP_NAME}`}
-              width={100}
-              height={100}
-            />
-          </Link>
+          <Logo />
 
           {/* Nav Laptop */}
           <div className="hidden md:flex items-center">

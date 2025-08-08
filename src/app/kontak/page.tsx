@@ -1,4 +1,4 @@
-import { Hero } from "@/components/kontak";
+import { GoogleMap, Hero, Kontak } from "@/components/kontak";
 import { appConfig, appGenerateMetadata } from "@/lib";
 import { Seo } from "@/types";
 import { Metadata } from "next";
@@ -23,6 +23,12 @@ export default function page() {
       <Hero />
 
       <div className="my-space"></div>
+
+      <Kontak />
+
+      <div className="my-space"></div>
+
+      <GoogleMap />
     </>
   );
 }

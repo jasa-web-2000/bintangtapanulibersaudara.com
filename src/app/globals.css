@@ -130,10 +130,13 @@
   }
 
   h1 {
-    @apply text-3xl font-semibold tracking-tight text-slate-200;
+    @apply text-3xl font-bold tracking-wide text-slate-200;
   }
   h2 {
-    @apply text-2xl font-semibold tracking-tight [&.light]:text-slate-300 text-primary;
+    @apply text-2xl font-semibold [&.light]:text-slate-300 text-primary;
+  }
+  h3 {
+    @apply text-lg font-semibold  [&.light]:text-slate-400 text-primary/85;
   }
   p.light {
     @apply text-slate-400;

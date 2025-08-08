@@ -71,7 +71,7 @@ export function Search() {
       <form
         id="cari-rute"
         onSubmit={form.handleSubmit(onSubmit)}
-        className="scroll-mt-24 bg-white rounded-lg shadow p-4 sm:px-6 grid grid-cols-2 md:grid-cols-1 gap-x-5 [&_label]:mt-4 [&_label]:line-clamp-1 [&_button]:w-full [&_button]:overflow-hidden">
+        className="scroll-mt-24 border-b-8 border-b-indigo-500 bg-white rounded-lg shadow p-4 sm:px-6 grid grid-cols-2 md:grid-cols-1 gap-x-5 [&_label]:mt-4 [&_label]:line-clamp-1 [&_button]:w-full [&_button]:overflow-hidden ">
         {/* ASAL */}
         <div className="md:grid md:grid-cols-3 md:gap-x-6 md:">
           {/* Provinsi Asal */}

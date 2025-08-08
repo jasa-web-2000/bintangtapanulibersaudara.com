@@ -6,3 +6,4 @@ export * from "./Search";
 export * from "./BackgroundHero";
 export * from "./HeroBottom";
 export * from "./SubTitle";
+export * from "./Logo";
