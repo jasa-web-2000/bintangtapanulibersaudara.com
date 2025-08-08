@@ -17,18 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      data-scroll-behavior="smooth"
       lang="id"
       className="scroll-smooth">
       <body
-        className={`${poppins.className} antialiased w-full h-dvh !overflow-visible`}>
+        className={`${poppins.className} flex flex-col antialiased w-full h-dvh !overflow-visible`}>
         {/* Header */}
         <Header />
         {/* Header */}
 
-        <main>
-          {children}
-          <div className="h-[1000px]"></div>
-        </main>
+        <main className="">{children}</main>
 
         <Footer />
 

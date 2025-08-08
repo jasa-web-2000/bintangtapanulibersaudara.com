@@ -1,11 +1,11 @@
-import { Galeri, Hero } from "@/components/galeri";
+import { Hero } from "@/components/kontak";
 import { appConfig, appGenerateMetadata } from "@/lib";
 import { Seo } from "@/types";
 import { Metadata } from "next";
 
 const seo: Seo = {
-  title: `Galeri Travel - ${appConfig.APP_NAME}`,
-  description: `Galeri Travel - ${appConfig.APP_NAME}`,
+  title: `Kontak Travel - ${appConfig.APP_NAME}`,
+  description: `Kontak Travel - ${appConfig.APP_NAME}`,
 };
 
 export const metadata: Promise<Metadata> = appGenerateMetadata({
@@ -23,8 +23,6 @@ export default function page() {
       <Hero />
 
       <div className="my-space"></div>
-
-      <Galeri />
     </>
   );
 }

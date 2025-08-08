@@ -5,3 +5,4 @@ export * from "./Footer";
 export * from "./Search";
 export * from "./BackgroundHero";
 export * from "./HeroBottom";
+export * from "./SubTitle";

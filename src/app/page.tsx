@@ -14,14 +14,6 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
   openGraph: {
     title: seo.title,
     description: seo.description,
-    images: [
-      {
-        url: "/images/logo.jpg",
-        width: 672,
-        height: 672,
-        alt: appConfig.APP_NAME,
-      },
-    ],
   },
 });
 
@@ -29,6 +21,9 @@ export default function page() {
   return (
     <>
       <Hero />
+      <div className="my-space"></div>
+
+      <div className="my-space"></div>
     </>
   );
 }

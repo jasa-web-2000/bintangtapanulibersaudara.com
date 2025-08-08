@@ -129,8 +129,14 @@
     @apply hover:text-indigo-950 text-slate-700 hover:text-shadow-2xs;
   }
 
-  #hero h1 {
-    @apply text-3xl mb-5 font-semibold tracking-tight text-slate-200;
+  h1 {
+    @apply text-3xl font-semibold tracking-tight text-slate-200;
+  }
+  h2 {
+    @apply text-2xl font-semibold tracking-tight [&.light]:text-slate-300 text-primary;
+  }
+  p.light {
+    @apply text-slate-400;
   }
 
   /* a { 
@@ -144,4 +150,8 @@
 
 @utility bg-container {
   @apply absolute bg-[url(/images/background-home.jpg)] bg-cover bg-center w-full h-full bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-950/85 before:to-indigo-950/95 before:content-[''];
+}
+
+@utility my-space {
+  @apply min-h-24;
 }

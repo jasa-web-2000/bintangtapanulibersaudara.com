@@ -6,12 +6,12 @@ import { Search, BackgroundHero, HeroBottom } from "@/components";
 export function Hero() {
   return (
     <>
-      <BackgroundHero>
+      <BackgroundHero className="!pb-32">
         <Badge className="bg-primary/40 mb-3 rounded-full px-2.5">
           Travel Sumatra
           <CarFront size={11} />
         </Badge>
-        <h1>{appConfig.APP_NAME}</h1>
+        <h1 className="mb-5">{appConfig.APP_NAME}</h1>
         <p className="text-slate-300 text-lg">
           Bersama {appConfig.APP_NAME} menawarkan {appConfig.APP_TAGLINE} dengan
           harga murah dan terjangkau untuk anda.
