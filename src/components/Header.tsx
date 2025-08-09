@@ -17,7 +17,9 @@ export function Header() {
           {/* Toggle Nav */}
           <div className="block md:hidden my-auto">
             <Popover>
-              <PopoverTrigger className="border rounded-sm p-1.5 bg-primary ">
+              <PopoverTrigger
+                title="toogle menu"
+                className="border rounded-sm p-1.5 bg-primary ">
                 {/* <Button size="icon"> */}
                 <AlignRight
                   size={20}

@@ -11,7 +11,7 @@ export function Hero() {
           Travel Sumatra
           <CarFront size={11} />
         </Badge>
-        <h1 className="mb-5">{appConfig.APP_NAME}</h1>
+        <h1 className="mb-4">{appConfig.APP_NAME}</h1>
         <p className="text-slate-300 text-lg">
           Bersama {appConfig.APP_NAME} menawarkan {appConfig.APP_TAGLINE} dengan
           harga murah dan terjangkau untuk anda.
@@ -38,7 +38,7 @@ export function Hero() {
             <Link
               href="#cari-rute"
               title="rute-travel">
-              <MessageCircleMore /> Cari Rute
+              Cari Rute
             </Link>
           </Button>
         </div>

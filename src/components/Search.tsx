@@ -5,7 +5,6 @@ import { z } from "zod";
 import { capitalize } from "@/lib";
 import { SearchCheck, SearchX } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
 import {
   Form,
@@ -13,14 +12,13 @@ import {
   FormField,
   FormItem,
   FormLabel,
-} from "@/components/ui/form";
-import {
+  Button,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/";
 
 import provinces from "@/lib/data/provinces.json";
 import regencies from "@/lib/data/regencies.json";
@@ -302,6 +300,8 @@ export function Search() {
         <div className="w-full col-span-full text-right mt-5">
           <Button
             type="submit"
+            disabled={!form.formState.isValid}
+            title="cari travel"
             className="!w-auto">
             {form.formState.isValid ? <SearchCheck /> : <SearchX />} Cari Travel
           </Button>

@@ -37,7 +37,7 @@ export function Galeri() {
         subTitle="Galeri Travel & Armada"
         paragraph={`Galeri armada travel ${appConfig.APP_NAME} : nyaman, bersih, dan terawat.`}
       />
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-7 [&_img]:rounded-md [&_img]:w-full [&_img]:object-cover [&_img]:object-top [&_img]:shadow-lg [&_img]:border-b-8 [&_img]:border-indigo-500">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-7 [&_img]:rounded-md [&_img]:w-full [&_img]:object-cover [&_img]:object-top [&_img]:shadow-lg [&_img]:border-b-8 [&_img]:border-indigo-500 [&_img]:brightness-75 [&_img]:hover:brightness-90">
         {galeri.map((e, i) => {
           return (
             <div

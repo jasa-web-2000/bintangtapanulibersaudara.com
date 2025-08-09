@@ -19,6 +19,7 @@ export const appConfig: AppConfig = {
   // APP_URL: "http://localhost:3000",
   APP_NAME: "CV. Bintang Tapanuli Bersaudara",
   APP_TAGLINE: "Travel Sumatra Terbaik",
+  // TELPHONE: "+62 882-1453-5126",
   TELPHONE: "+62 813-1544-403",
   EMAIL: "admin@bintangtapanulibersaudara.com",
   ADDRESS:
