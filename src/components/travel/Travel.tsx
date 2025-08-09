@@ -2,10 +2,14 @@ import React from "react";
 import { SubTitle, TravelGrid, TravelGridItem } from "@/components";
 import { appConfig, travel } from "@/lib";
 
-export function Travel() {
+export async function Travel() {
   const data = [
-    travel({ origin: "3", destination: "5" }),
+    await travel({ origin: "31", destination: "33" }),
+    await travel({ origin: "31", destination: "3211111233" }),
   ];
+
+  console.log(data);
+
   return (
     <div className="my-container">
       <SubTitle
@@ -13,7 +17,14 @@ export function Travel() {
         paragraph={`${appConfig.APP_NAME} melayani rute se-Sumatra dan memiliki beberapa rute utama seperti:`}
       />
       <TravelGrid>
-        <TravelGridItem data={null} />
+        {data
+          .filter((e) => e?.origin !== null && e?.destination !== null)
+          .map((e, i) => (
+            <TravelGridItem
+              key={i}
+              data={e}
+            />
+          ))}
       </TravelGrid>
     </div>
   );
