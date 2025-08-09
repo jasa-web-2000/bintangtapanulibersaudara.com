@@ -21,9 +21,6 @@ export default function page() {
   return (
     <>
       <Hero />
-      <div className="my-space"></div>
-
-      <div className="my-space"></div>
     </>
   );
 }

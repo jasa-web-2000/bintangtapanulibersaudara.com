@@ -7,3 +7,5 @@ export * from "./BackgroundHero";
 export * from "./HeroBottom";
 export * from "./SubTitle";
 export * from "./Logo";
+export * from "./TravelGrid";
+export * from "./TravelGridItem";

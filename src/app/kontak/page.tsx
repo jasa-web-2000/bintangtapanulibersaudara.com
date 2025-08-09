@@ -14,6 +14,7 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
   openGraph: {
     title: seo.title,
     description: seo.description,
+    url: `${appConfig.APP_URL}/kontak`,
   },
 });
 

@@ -1,13 +1,14 @@
 "use server";
 import {
+  appConfig,
   appGenerateMetadata,
   capitalize,
+  travel,
   findProvincesByRecommend,
   findRegenciesByRecommend,
-} from "@/lib/index";
+} from "@/lib";
 import { Metadata } from "next";
 import { ParamsTravel, Seo } from "@/types";
-import { travel } from "@/lib/index";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
@@ -63,7 +64,7 @@ export async function generateMetadata({
     title: `${capitalize(title)} - Jasa Travel Murah dan Terpercaya`,
     description: `${capitalize(
       title
-    )} akan membantu anda menemukan jasa travel yang murah dan terpercaya di sekitar anda.`,
+    )} akan membantu anda mengantar kemana pun dengan biaya travel yang murah dan jadwal 24 jam.`,
   };
 
   return appGenerateMetadata({
@@ -72,6 +73,7 @@ export async function generateMetadata({
     openGraph: {
       title: seo.title,
       description: seo.description,
+      url: `${appConfig.APP_URL}/travel/${origin}/${destination}`,
       images: [
         {
           url: `travel/${origin}/${destination}/thumbnail.jpg`,
