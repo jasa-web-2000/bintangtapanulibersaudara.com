@@ -7,9 +7,9 @@ interface data {
   destination: Location | null;
 }
 
-export function TravelGridItem({ data }: { data: data }) {
-  const origin = capitalize(data?.origin?.name);
-  const destination = capitalize(data?.destination?.name);
+export function TravelGridItem({ data }: { data: data | null }) {
+  const origin = capitalize(data?.origin?.name || 'Tanpanama1');
+  const destination = capitalize(data?.destination?.name || 'Tanpanama2');
 
   return <div>{`Travel ${origin} ${destination}`}</div>;
 }
