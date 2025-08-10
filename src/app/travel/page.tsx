@@ -28,10 +28,10 @@ export const featuredTravelData = [
   await travel({ origin: "1471", destination: "1221" }),
   await travel({ origin: "1275", destination: "1471" }),
   await travel({ origin: "1471", destination: "15" }),
-  await travel({ origin: "1471", destination: "11" }),
-  await travel({ origin: "1471", destination: "12" }),
-  await travel({ origin: "1471", destination: "1671" }),
-  await travel({ origin: "1471", destination: "18" }),
+  // await travel({ origin: "1471", destination: "11" }),
+  // await travel({ origin: "1471", destination: "12" }),
+  // await travel({ origin: "1471", destination: "1671" }),
+  // await travel({ origin: "1471", destination: "18" }),
 ];
 
 export default async function page() {

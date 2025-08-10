@@ -8,7 +8,7 @@ export function Logo() {
     <div className="flex items-center">
       {/* <span className="w-[10px] border-primary border-l-2 h-1/2 rounded-full"></span> */}
       <Link
-        className="h-auto w-[calc(40px+5vw)] min-w-11 max-w-16 block outline-0"
+        className="h-[calc(40px+5vw)] w-[calc(40px+5vw)] min-w-11 max-w-16 min-h-11 max-h-16 block outline-0"
         href="/"
         title={appConfig.APP_NAME}>
         <Image
