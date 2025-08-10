@@ -12,13 +12,12 @@ export function Logo() {
         href="/"
         title={appConfig.APP_NAME}>
         <Image
-          priority={true}
           className="w-auto"
           title={appConfig.APP_NAME}
           src="/images/logo.png"
           alt={`Logo ${appConfig.APP_NAME}`}
-          width={100}
-          height={100}
+          width={150}
+          height={150}
         />
       </Link>
     </div>
