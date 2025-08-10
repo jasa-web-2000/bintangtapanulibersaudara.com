@@ -94,7 +94,7 @@ ${window.location.href}`;
                       <SelectValue placeholder="Pilih jumlah tiket " />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="max-h-56">
                     {Array.from({ length: 14 }, (_, i) => i + 1).map((num) => (
                       <SelectItem
                         key={num}
