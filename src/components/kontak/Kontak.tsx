@@ -11,7 +11,7 @@ export function Contact() {
         subTitle="Pesan Travel Sekarang"
         paragraph={`Anda bisa pesan travel secara online atau datane ke garasi ${appConfig.APP_NAME}.`}
       />
-      <div className="mt-10 content-start grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-7 sm:gap-x-10 md:gap-y-8 lg:gap-y-9 md:gap-x-20 lg:gap-x-28 lg:justify-center md:items-center">
+      <div className="mt-10 content-start grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-9 sm:gap-x-10 md:gap-y-10 md:gap-x-20 lg:gap-x-28 lg:justify-center md:items-center">
         <div className="md:col-span-1 lg:col-span-5 lg:col-start-2">
           <Booking />
         </div>
