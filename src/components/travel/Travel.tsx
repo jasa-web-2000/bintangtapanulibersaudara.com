@@ -1,13 +1,15 @@
+"use client";
 import React from "react";
 import { SubTitle, TravelGrid, TravelGridItem } from "@/components";
-import { appConfig, travel } from "@/lib";
+import { appConfig } from "@/lib";
+import { Location } from "@/types";
 
-export async function Travel() {
-  const data = [
-    await travel({ origin: "31", destination: "33" }),
-    await travel({ origin: "32", destination: "34" }),
-  ];
+interface Data {
+  origin: Location | null;
+  destination: Location | null;
+}
 
+export function Travel({ data }: { data: (Data | undefined)[] }) {
   return (
     <div className="my-container">
       <SubTitle
@@ -16,7 +18,10 @@ export async function Travel() {
       />
       <TravelGrid>
         {data
-          .filter((e) => e?.origin !== null && e?.destination !== null)
+          .filter(
+            (e) =>
+              e !== undefined && e?.origin !== null && e?.destination !== null
+          )
           .map((e, i) => (
             <TravelGridItem
               key={i}

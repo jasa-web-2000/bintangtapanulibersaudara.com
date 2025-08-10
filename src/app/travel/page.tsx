@@ -1,5 +1,5 @@
 import { Hero, Travel } from "@/components/travel";
-import { appConfig, appGenerateMetadata } from "@/lib";
+import { appConfig, appGenerateMetadata, travel } from "@/lib";
 import { Seo } from "@/types";
 import { Metadata } from "next";
 
@@ -18,14 +18,20 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
   },
 });
 
-export default function page() {
+export default async function page() {
+  const data = [
+    await travel({ origin: "11", destination: "12" }),
+    await travel({ origin: "11", destination: "13" }),
+    await travel({ origin: "11", destination: "14" }),
+  ];
+
   return (
     <>
       <Hero />
 
       <div className="my-space"></div>
 
-      <Travel />
+      <Travel data={data} />
     </>
   );
 }

@@ -48,7 +48,7 @@ export function Booking() {
 
 ${window.location.href}`;
 
-    const url = whatsapp(appConfig.TELPHONE, message);
+    const url = whatsapp(null, message);
 
     window.open(url, "_blank");
   }
