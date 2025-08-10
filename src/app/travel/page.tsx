@@ -20,9 +20,10 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
 
 export default async function page() {
   const data = [
-    await travel({ origin: "11", destination: "12" }),
-    await travel({ origin: "11", destination: "13" }),
-    await travel({ origin: "11", destination: "14" }),
+    await travel({ origin: "1471", destination: "1271" }),
+    await travel({ origin: "11", destination: "1277" }),
+    await travel({ origin: "11", destination: "1202050" }),
+    await travel({ origin: "11", destination: "1203" }),
   ];
 
   return (

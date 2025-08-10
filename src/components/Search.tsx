@@ -61,7 +61,7 @@ export function Search() {
       data?.destination_regency ??
       data?.destination_province;
 
-    router.push(`/travel/${origin}/${destination}/`);
+    window.open(`/travel/${origin}/${destination}/`, "_blank");
   }
 
   return (
@@ -94,15 +94,17 @@ export function Search() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {provinces.map((e, i) => {
-                        return (
-                          <SelectItem
-                            key={i}
-                            value={e.id}>
-                            {capitalize(e?.name) ?? "code id: " + e.id}
-                          </SelectItem>
-                        );
-                      })}
+                      {provinces
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((e, i) => {
+                          return (
+                            <SelectItem
+                              key={i}
+                              value={e.id}>
+                              {capitalize(e?.name) ?? "code id: " + e.id}
+                            </SelectItem>
+                          );
+                        })}
                     </SelectContent>
                   </Select>
                 </FormItem>
@@ -131,6 +133,7 @@ export function Search() {
                       .filter(
                         (r) => r.province_id == form.watch("origin_province")
                       )
+                      .sort((a, b) => a.name.localeCompare(b.name))
                       .map((e, i) => {
                         return (
                           <SelectItem
@@ -167,6 +170,7 @@ export function Search() {
                       .filter(
                         (r) => r.regency_id == form.watch("origin_regency")
                       )
+                      .sort((a, b) => a.name.localeCompare(b.name))
                       .map((e, i) => {
                         return (
                           <SelectItem
@@ -207,15 +211,17 @@ export function Search() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {provinces.map((e, i) => {
-                        return (
-                          <SelectItem
-                            key={i}
-                            value={e.id}>
-                            {capitalize(e?.name) ?? "code id: " + e.id}
-                          </SelectItem>
-                        );
-                      })}
+                      {provinces
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((e, i) => {
+                          return (
+                            <SelectItem
+                              key={i}
+                              value={e.id}>
+                              {capitalize(e?.name) ?? "code id: " + e.id}
+                            </SelectItem>
+                          );
+                        })}
                     </SelectContent>
                   </Select>
                 </FormItem>
@@ -245,6 +251,7 @@ export function Search() {
                         (r) =>
                           r.province_id == form.watch("destination_province")
                       )
+                      .sort((a, b) => a.name.localeCompare(b.name))
                       .map((e, i) => {
                         return (
                           <SelectItem
@@ -281,6 +288,7 @@ export function Search() {
                       .filter(
                         (r) => r.regency_id == form.watch("destination_regency")
                       )
+                      .sort((a, b) => a.name.localeCompare(b.name))
                       .map((e, i) => {
                         return (
                           <SelectItem

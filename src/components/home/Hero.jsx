@@ -13,8 +13,8 @@ export function Hero() {
         </Badge>
         <h1 className="mb-4">{appConfig.APP_NAME}</h1>
         <p className="text-slate-300 text-lg">
-          Bersama {appConfig.APP_NAME} menawarkan {appConfig.APP_TAGLINE} dengan
-          harga murah dan terjangkau untuk anda.
+          Bersama {appConfig.APP_NAME} menawarkan {appConfig.APP_TAGLINE} dan
+          se-Sumatra dengan harga murah dan terjangkau.
         </p>
         <div className="[&>*]:w-full [&>*]:sm:w-auto mt-5 flex gap-5 flex-col items-center sm:flex-row sm:justify-center">
           <Button

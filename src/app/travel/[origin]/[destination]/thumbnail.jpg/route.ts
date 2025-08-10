@@ -20,7 +20,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
 
     image.resize({ w: width, h: height });
     const fontTitle = await loadFont(
-      appConfig.APP_URL + "/fonts/open-sans-128-white.fnt"
+      appConfig.APP_URL + "/fonts/open-sans-64-white.fnt"
     );
 
     image.print({
@@ -30,7 +30,7 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       text: {
         text: `Travel ${capitalize(travelData?.origin?.name)} ${capitalize(
           travelData?.destination?.name
-        )} Murah (PP)`,
+        )} Murah`,
         alignmentX: HorizontalAlign.CENTER,
         alignmentY: VerticalAlign.MIDDLE,
       },
@@ -53,8 +53,9 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     });
 
     const buffer = await image.getBuffer("image/jpeg", { quality: 50 });
+    const uint8Array = new Uint8Array(buffer);
 
-    return new NextResponse(buffer, {
+    return new NextResponse(uint8Array, {
       status: 200,
       headers: {
         "Content-Type": "image/jpeg",
