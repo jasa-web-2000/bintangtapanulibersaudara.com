@@ -1,12 +1,12 @@
 import React from "react";
 
-interface PropsListKontak {
+interface PropsContactList {
   icon: React.ReactElement;
   subSubTitle: string;
   paragraph: string;
 }
 
-export function ListKontak({ icon, subSubTitle, paragraph }: PropsListKontak) {
+export function ListKontak({ icon, subSubTitle, paragraph }: PropsContactList) {
   return (
     <div className="flex gap-x-5 items-start mb-5">
       <div className="grid place-items-center text-slate-50 bg-gradient-to-br from-indigo-400 to-indigo-600 h-12 w-12 rounded-lg shadow shrink-0">

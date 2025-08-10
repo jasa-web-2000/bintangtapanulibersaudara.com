@@ -1,11 +1,10 @@
 import { appConfig } from "@/lib";
 import React from "react";
 import { SubTitle } from "@/components";
-import { ListKontak } from "./ListKontak";
+import { ListKontak, Booking } from "@/components/kontak";
 import { MapPin, MessageCircleMore, Phone } from "lucide-react";
-import { Booking } from "./Booking";
 
-export function Kontak() {
+export function Contact() {
   return (
     <div className="my-container">
       <SubTitle

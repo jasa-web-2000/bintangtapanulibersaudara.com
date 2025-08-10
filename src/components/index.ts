@@ -9,3 +9,4 @@ export * from "./SubTitle";
 export * from "./Logo";
 export * from "./TravelGrid";
 export * from "./TravelGridItem";
+export * from "./Cta";

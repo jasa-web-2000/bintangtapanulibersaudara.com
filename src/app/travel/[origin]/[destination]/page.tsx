@@ -11,7 +11,8 @@ import { Metadata } from "next";
 import { ParamsTravel, Seo } from "@/types";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { BackgroundHero, HeroBottom } from "@/components";
+import { BackgroundHero, Cta, HeroBottom } from "@/components";
+import Link from "next/link";
 
 export default async function page({ params }: ParamsTravel) {
   const { origin, destination } = await params;
@@ -25,7 +26,8 @@ export default async function page({ params }: ParamsTravel) {
   const destinationName = capitalize(
     travelData?.destination?.name || "Tanpanama2"
   );
-  const title = `Travel ${origin} ${destination}`;
+  const title = `Travel ${originName} ${destinationName}`;
+  const titleReverse = `Travel ${destinationName} ${originName}`;
 
   // const ProvincesRecomendationData = findProvincesByRecommend([
   //   origin,
@@ -40,19 +42,39 @@ export default async function page({ params }: ParamsTravel) {
   return (
     <>
       <BackgroundHero className="!pb-32">
-        <h1 className="mb-4">{appConfig.APP_NAME}</h1>
+        <h1 className="mb-4">{title}</h1>
       </BackgroundHero>
 
       <HeroBottom>
         <Image
           priority={true}
-          className="border-b-8 border-b-indigo-500 shadow-lg rounded-xl w-full max-w-[380] md:max-w-[420px] lg:max-w-[480px] mx-auto"
+          className="bg-slate-100 border-b-8 border-b-indigo-500 shadow-lg rounded-xl w-full max-w-[380] md:max-w-[420px] lg:max-w-[480px] mx-auto"
           src={`/travel/${origin}/${destination}/thumbnail.jpg`}
           alt={capitalize(title)}
           title={capitalize(title)}
           width={1300}
           height={731}
         />
+
+        <div className="mt-5 [&_p]:text-justify [&_a]:!underline [&>*]:mb-5">
+          <p>
+            Jasa{" "}
+            <Link
+              href={`/travel/${origin}/${destination}`}
+              title={title}>
+              {title}
+            </Link>{" "}
+            kini hadir untuk membantu perjalan travel anda. Kami akan
+            mengantarkan anda kemana pun anda mau. Baik itu dari {originName} ke{" "}
+            {destinationName} maupun dari {destinationName} ke {originName}
+          </p>
+          <p>
+            Apakah anda sedang mencari jasa travel terpercaya di daerah Sumatra,
+            terutama di {originName}?
+          </p>
+        </div>
+
+        <Cta />
       </HeroBottom>
     </>
   );

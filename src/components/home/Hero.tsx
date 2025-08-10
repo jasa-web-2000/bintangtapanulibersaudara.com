@@ -23,6 +23,7 @@ export function Hero() {
             variant="outline"
             title="kontak">
             <Link
+              rel="nofollow noindex"
               href={whatsapp()}
               title="whatsapp"
               target="_blank">

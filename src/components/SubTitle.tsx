@@ -15,7 +15,7 @@ export function SubTitle({
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className={`${
-          type == "dark" ? "fill-indigo-700" : "fill-indigo-500"
+          type == "dark" ? "fill-indigo-700" : "fill-indigo-400"
         } w-6 h-6 mx-auto`}>
         <path
           fillRule="evenodd"

@@ -1,8 +1,12 @@
-import { Hero } from "@/components/home";
+import { Featured, Hero } from "@/components/home";
 import { Travel } from "@/components/travel";
 import { appGenerateMetadata, appConfig } from "@/lib";
 import { Seo } from "@/types";
 import { Metadata } from "next";
+import { featuredTravelData } from "@/app/travel/page";
+import { Cta } from "@/components";
+import { Galeri } from "@/components/galeri";
+import { Contact } from "@/components/kontak";
 
 const seo: Seo = {
   title: `${appConfig.APP_NAME} - ${appConfig.APP_TAGLINE}`,
@@ -25,9 +29,25 @@ export default function page() {
 
       <div className="my-space"></div>
 
-      <Travel data={[]} />
+      <Travel data={featuredTravelData} />
 
       <div className="my-space"></div>
+
+      <Featured />
+
+      <div className="my-space"></div>
+
+      <div className="my-container">
+        <Cta />
+      </div>
+
+      <div className="my-space"></div>
+
+      <Galeri />
+
+      <div className="my-space"></div>
+
+      <Contact />
     </>
   );
 }

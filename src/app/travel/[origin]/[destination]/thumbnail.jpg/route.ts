@@ -26,15 +26,15 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     image.print({
       font: fontTitle,
       x: 50,
-      y: 40,
+      y: 0,
       text: {
-        text: `Travel ${capitalize(travelData?.origin?.name)} ${capitalize(
+        text: `Travel dari ${capitalize(travelData?.origin?.name)} ke ${capitalize(
           travelData?.destination?.name
-        )} Murah`,
+        )} murah dan door to door`,
         alignmentX: HorizontalAlign.CENTER,
         alignmentY: VerticalAlign.MIDDLE,
       },
-      maxWidth: width - 50,
+      maxWidth: width - 100,
       maxHeight: 530,
     });
 

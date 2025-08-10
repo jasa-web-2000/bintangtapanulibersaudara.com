@@ -1,36 +1,32 @@
 import { whatsapp } from "@/lib";
 import Link from "next/link";
-import { Button } from "./ui";
+import { Button } from "@/components/ui";
 import { MessageCircleMore } from "lucide-react";
+
+export const navItem = [
+  ["/", "Beranda"],
+  ["/travel", "Travel"],
+  ["/galeri", "Galeri"],
+  ["/kontak", "Kontak"],
+];
 
 export function Nav() {
   return (
     <nav className="w-full flex flex-col gap-4 md:flex-row md:items-center md:gap-x-7 lg:gap-x-10">
-      <Link
-        href="/"
-        title="Beranda">
-        Beranda
-      </Link>
-      <Link
-        href="/travel"
-        title="Travel">
-        Travel
-      </Link>
-      <Link
-        href="/galeri"
-        title="Galeri">
-        Galeri
-      </Link>
-      <Link
-        href="/kontak"
-        title="Kontak">
-        Kontak
-      </Link>
+      {navItem.map((e, i) => (
+        <Link
+          key={i}
+          href={e[0]}
+          title={e[1]}>
+          {e[1]}
+        </Link>
+      ))}
       <Button
         size="sm"
         asChild
         title="kontak">
         <Link
+          rel="nofollow noindex"
           href={whatsapp()}
           title="whatsapp"
           target="_blank">

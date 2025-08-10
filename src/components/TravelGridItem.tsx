@@ -16,12 +16,12 @@ interface data {
   destination: Location | null;
 }
 
-interface ListFeatured {
+interface FeaturedList {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   feature: string;
 }
 
-const ListFeatured = ({ icon: Icon, feature }: ListFeatured) => {
+const FeaturedList = ({ icon: Icon, feature }: FeaturedList) => {
   return (
     <div className="flex space-x-2 items-center mb-2">
       <Icon className="text-indigo-500 w-[14px] h-[14px]" />
@@ -50,17 +50,21 @@ export function TravelGridItem({ data }: { data: data | null }) {
           Unggulan
         </span>
       </div>
-      <h3 className="my-4 text-[17px]">{title}</h3>
+      <h3
+        className="my-4 text-[17px] line-clamp-2"
+        title={title}>
+        {title}
+      </h3>
       <div>
-        <ListFeatured
+        <FeaturedList
           icon={Clock}
           feature="24 jam"
         />
-        <ListFeatured
+        <FeaturedList
           icon={DoorClosed}
           feature="Door to door"
         />
-        <ListFeatured
+        <FeaturedList
           icon={PackagePlus}
           feature="Free bagasi 15kg"
         />

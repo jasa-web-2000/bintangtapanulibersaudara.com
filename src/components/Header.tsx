@@ -1,4 +1,4 @@
-import { Popover, PopoverContent, PopoverTrigger } from "./ui";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui";
 import { AlignRight } from "lucide-react";
 import { Logo, Nav } from "@/components";
 

@@ -1,4 +1,4 @@
-import { BackgroundHero } from "../BackgroundHero";
+import { BackgroundHero } from "@/components";
 
 export function Hero() {
   return (

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { capitalize } from "@/lib";
 import { SearchCheck, SearchX } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 import {
   Form,
@@ -23,6 +22,7 @@ import {
 import provinces from "@/lib/data/provinces.json";
 import regencies from "@/lib/data/regencies.json";
 import districts from "@/lib/data/districts.json";
+import { useEffect } from "react";
 
 const FormSchema = z.object({
   origin_province: z
@@ -38,8 +38,6 @@ const FormSchema = z.object({
 });
 
 export function Search() {
-  const router = useRouter();
-
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -51,6 +49,29 @@ export function Search() {
       destination_district: undefined,
     },
   });
+
+  const originProvince = form.watch("origin_province");
+  const originRegency = form.watch("origin_regency");
+  const destinationProvince = form.watch("destination_province");
+  const destinationRegency = form.watch("destination_regency");
+
+  useEffect(() => {
+    form.setValue("origin_regency", undefined);
+    form.setValue("origin_district", undefined);
+  }, [originProvince, form]);
+
+  useEffect(() => {
+    form.setValue("origin_district", undefined);
+  }, [originRegency, form]);
+
+  useEffect(() => {
+    form.setValue("destination_regency", undefined);
+    form.setValue("destination_district", undefined);
+  }, [destinationProvince, form]);
+
+  useEffect(() => {
+    form.setValue("destination_district", undefined);
+  }, [destinationRegency, form]);
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     const origin =
@@ -87,6 +108,7 @@ export function Search() {
                   <FormLabel>Provinsi Asal</FormLabel>
                   <Select
                     onValueChange={field.onChange}
+                    value={field.value ?? ""}
                     defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -122,6 +144,7 @@ export function Search() {
                 <Select
                   disabled={form.watch("origin_province") == ""}
                   onValueChange={field.onChange}
+                  value={field.value ?? ""}
                   defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -159,6 +182,7 @@ export function Search() {
                 <Select
                   disabled={form.watch("origin_regency") == undefined}
                   onValueChange={field.onChange}
+                  value={field.value ?? ""}
                   defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -204,6 +228,7 @@ export function Search() {
                   <FormLabel>Provinsi Tujuan</FormLabel>
                   <Select
                     onValueChange={field.onChange}
+                    value={field.value ?? ""}
                     defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -239,6 +264,7 @@ export function Search() {
                 <Select
                   disabled={form.watch("destination_province") == ""}
                   onValueChange={field.onChange}
+                  value={field.value ?? ""}
                   defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -277,6 +303,7 @@ export function Search() {
                 <Select
                   disabled={form.watch("destination_regency") == undefined}
                   onValueChange={field.onChange}
+                  value={field.value ?? ""}
                   defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>

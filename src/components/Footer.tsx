@@ -1,22 +1,77 @@
-"use client";
-
-import { appConfig } from "@/lib";
+import { appConfig, whatsapp } from "@/lib";
 import Link from "next/link";
+import { Logo, navItem } from "@/components";
+import { ChevronRight, MapPin, MessageCircleMore, Phone } from "lucide-react";
+
+const contactItem = [
+  {
+    href: appConfig.LINK_ADDRESS,
+    label: appConfig.ADDRESS,
+    icon: MapPin,
+  },
+  {
+    href: whatsapp(),
+    label: appConfig.TELPHONE,
+    icon: Phone,
+  },
+  {
+    href: whatsapp(),
+    label: appConfig.TELPHONE,
+    icon: MessageCircleMore,
+  },
+];
 
 export function Footer() {
   return (
     <>
       <div className="my-space "></div>
-      <footer className="relative">
+      <footer className="relative mt-10">
         <div className="bg-container"></div>
         <div className="relative my-container">
-          <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            
+          <div className="py-12 grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-12 [&_h3]:mb-3 [&_h3]:!text-slate-300 [&_.footerList]:flex [&_.footerList]:flex-col [&_.footerList]:gap-y-1 [&_.footerList_a]:text-slate-400 [&_.footerList_a]:hover:text-slate-200 [&_.footerList_a]:flex [&_.footerList_a]:items-center [&_.footerList_a]:gap-1.5 [&_.footerList_a_svg]:shrink-0">
+            {/* Logo */}
+            <div className="sm:col-span-full md:col-span-6 sm:max-w-3/4 md:max-w-full lg:max-w-[400px]">
+              <Logo />
+              <p className="light">
+                {appConfig.APP_NAME} menawarkan jasa {appConfig.APP_TAGLINE} dan
+                Travel seluruh Pulau Sumatra.
+              </p>
+            </div>
+
+            {/* Laman */}
+            <div className="sm:col-span-1 md:col-span-2">
+              <h3 className="light">Laman</h3>
+              <div className="footerList">
+                {navItem.map((e, i) => (
+                  <Link
+                    key={i}
+                    href={e[0]}
+                    title={e[1]}>
+                    <ChevronRight size={16} /> {e[1]}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Kontak */}
+            <div className="sm:col-span-1 md:col-span-4">
+              <h3 className="light">Kontak</h3>
+              <div className="footerList">
+                {contactItem.map((item, index) => (
+                  <Link
+                    key={index}
+                    rel="nofollow noindex"
+                    href={item.href}
+                    title={item.label}>
+                    <item.icon size={16} />
+                    <span className="line-clamp-1">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="text-center text-sm text-slate-300 border-t border-slate-700 py-5">
-            <p>
-              Copyright © {new Date().getFullYear()} {appConfig.APP_NAME}.
-            </p>
+            <p>Copyright © since 2025 | {appConfig.APP_NAME}.</p>
             <p>
               Developed by{" "}
               <Link
