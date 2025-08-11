@@ -13,7 +13,7 @@ export function site(): Site {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: appConfig.APP_NAME,
-    alternateName: ["TT", "T-T", appConfig.APP_NAME],
+    alternateName: appConfig.ALTERNATE_NAME,
     url: appConfig.APP_URL,
   };
 

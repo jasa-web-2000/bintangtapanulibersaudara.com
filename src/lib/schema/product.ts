@@ -84,8 +84,8 @@ export function product(input: ProductInput): ProductSchema {
     name: input?.name ?? appConfig.APP_NAME,
     description: input?.description ?? appConfig.APP_NAME,
     image: input?.image ?? [
-      "/travel-terdekat-logo-blue.jpg",
-      "/travel-terdekat-logo-white.jpg",
+      appConfig.APP_URL + "/images/logo.jpg",
+      appConfig.APP_URL + "/images/logo.png",
     ],
     brand: {
       "@type": "Brand",

@@ -30,19 +30,6 @@ export default function RootLayout({
 
         <Footer />
 
-        {/* Product SCHEMA */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              schema.product({
-                name: "Produk Terdekat",
-                description: "Produk terdekat yang tersedia di sekitar Anda.",
-              })
-            ).replace(/</g, "\\u003c"),
-          }}
-        />
-
         {/* Site SCHEMA */}
         <script
           type="application/ld+json"

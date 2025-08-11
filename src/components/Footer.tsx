@@ -77,7 +77,10 @@ export function Footer() {
             </div>
           </div>
           <div className="text-center text-sm text-slate-300 border-t border-slate-700 py-5">
-            <p>Copyright © since 2025 | {appConfig.APP_NAME}.</p>
+            <p>
+              Copyright © since {new Date().getFullYear()} - 2025 |{" "}
+              {appConfig.APP_NAME}.
+            </p>
             <p>
               Developed by{" "}
               <Link

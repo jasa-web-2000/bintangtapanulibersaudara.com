@@ -6,6 +6,7 @@ import {
   travel,
   findProvincesByRecommend,
   findRegenciesByRecommend,
+  schema,
 } from "@/lib";
 import { Metadata } from "next";
 import { ParamsTravel, Seo } from "@/types";
@@ -16,6 +17,12 @@ import Link from "next/link";
 
 export default async function page({ params }: ParamsTravel) {
   const { origin, destination } = await params;
+  const IDDate = new Date().toLocaleDateString("id-ID", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   const travelData = await travel({ origin, destination });
   if (!travelData?.origin?.name || !travelData?.destination?.name) {
@@ -76,8 +83,9 @@ export default async function page({ params }: ParamsTravel) {
             {destinationName} maupun dari {destinationName} ke {originName}
           </p>
           <p>
-            Apakah anda sedang mencari jasa travel terpercaya di daerah Sumatera,
-            terutama di {originName}? Jangan sampai salah memilih jasa travel!
+            Apakah anda sedang mencari jasa travel terpercaya di daerah
+            Sumatera, terutama di {originName}? Jangan sampai salah memilih jasa
+            travel!
           </p>
           <p>
             Kami menawarkan layanan door to door dengan kendaraan yang nyaman,
@@ -225,12 +233,38 @@ export default async function page({ params }: ParamsTravel) {
           <h2>Kesimpulan</h2>
           <p>
             Jasa <strong>{title}</strong> hadir sebagai solusi perjalanan
-            nyaman, aman, dan terpercaya di wilayah Sumatera. Dengan layanan door
-            to door, armada terawat, dan pemesanan online 24 jam, kami siap
+            nyaman, aman, dan terpercaya di wilayah Sumatera. Dengan layanan
+            door to door, armada terawat, dan pemesanan online 24 jam, kami siap
             melayani berbagai rute dengan harga terjangkau. Pesan sekarang dan
-            nikmati promo menarik setiap minggunya!
+            nikmati promo menarik khusus hari {IDDate}!
           </p>
         </div>
+
+        {/* Product SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              schema.product({
+                name: title,
+                description: `${title} terbaik dan termurah untuk hari ini.`,
+              })
+            ).replace(/</g, "\\u003c"),
+          }}
+        />
+
+        {/* Product SCHEMA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              schema.product({
+                name: titleReverse,
+                description: `${titleReverse} terbaik dan termurah untuk hari ini.`,
+              })
+            ).replace(/</g, "\\u003c"),
+          }}
+        />
       </HeroBottom>
     </>
   );
