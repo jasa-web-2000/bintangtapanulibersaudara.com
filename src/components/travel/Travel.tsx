@@ -14,7 +14,7 @@ export function Travel({ data }: { data: (Data | undefined)[] }) {
     <div className="my-container">
       <SubTitle
         subTitle="Rute Travel Utama Kami"
-        paragraph={`${appConfig.APP_NAME} melayani rute se-Sumatra dan memiliki beberapa rute utama seperti:`}
+        paragraph={`${appConfig.APP_NAME} melayani rute se-Sumatera dan memiliki beberapa rute utama seperti:`}
       />
       <TravelGrid>
         {data

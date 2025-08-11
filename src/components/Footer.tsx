@@ -10,7 +10,7 @@ const contactItem = [
     icon: MapPin,
   },
   {
-    href: whatsapp(),
+    href: `tel:${appConfig.TELPHONE.replace(/\D/g, "").replace(/^62?/, "62")}`,
     label: appConfig.TELPHONE,
     icon: Phone,
   },
@@ -34,7 +34,7 @@ export function Footer() {
               <Logo />
               <p className="light">
                 {appConfig.APP_NAME} menawarkan jasa {appConfig.APP_TAGLINE} dan
-                Travel seluruh Pulau Sumatra.
+                Travel seluruh Pulau Sumatera.
               </p>
             </div>
 

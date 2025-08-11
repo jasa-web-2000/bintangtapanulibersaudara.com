@@ -8,13 +8,13 @@ export function Hero() {
     <>
       <BackgroundHero className="!pb-32">
         <Badge className="bg-primary/40 mb-3 rounded-full px-2.5">
-          Travel Sumatra
+          Travel Sumatera
           <CarFront size={11} />
         </Badge>
         <h1 className="mb-4">{appConfig.APP_NAME}</h1>
         <p className="text-slate-300 text-lg">
           Bersama {appConfig.APP_NAME} menawarkan {appConfig.APP_TAGLINE} dan
-          se-Sumatra dengan harga murah dan terjangkau.
+          se-Sumatera dengan harga murah dan terjangkau.
         </p>
         <div className="[&>*]:w-full [&>*]:sm:w-auto mt-5 flex gap-5 flex-col items-center sm:flex-row sm:justify-center">
           <Button
