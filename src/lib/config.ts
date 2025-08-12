@@ -28,7 +28,7 @@ interface AppConfig {
 const APP_NAME = "CV. Bintang Tapanuli Bersaudara";
 
 export const appConfig: AppConfig = {
-  APP_URL: "https://bintangtapanulibersaudara.com",
+  APP_URL: "https://www.bintangtapanulibersaudara.com",
   // APP_URL: "http://localhost:3000",
   APP_NAME: APP_NAME,
   ALTERNATE_NAME: ["CV. BTB", "B-T-B", APP_NAME],

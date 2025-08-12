@@ -15,8 +15,8 @@ export async function GET(request: Request, { params }: ParamsTravel) {
 
   try {
     const image = await Jimp.read(appConfig.APP_URL + "/images/thumbnail.jpg");
-    const width = 1300;
-    const height = 731;
+    const width = 1100;
+    const height = 618.75;
 
     image.resize({ w: width, h: height });
     const fontTitle = await loadFont(
@@ -28,14 +28,16 @@ export async function GET(request: Request, { params }: ParamsTravel) {
       x: 50,
       y: 0,
       text: {
-        text: `Travel dari ${capitalize(travelData?.origin?.name)} ke ${capitalize(
+        text: `Travel dari ${capitalize(
+          travelData?.origin?.name
+        )} ke ${capitalize(
           travelData?.destination?.name
         )} murah dan door to door`,
         alignmentX: HorizontalAlign.CENTER,
         alignmentY: VerticalAlign.MIDDLE,
       },
       maxWidth: width - 100,
-      maxHeight: 530,
+      maxHeight: height,
     });
 
     const fontTelphone = await loadFont(
@@ -44,12 +46,13 @@ export async function GET(request: Request, { params }: ParamsTravel) {
     image.print({
       font: fontTelphone,
       x: 0,
-      y: 590,
+      y: height - 125,
       text: {
         text: appConfig.TELPHONE,
         alignmentX: HorizontalAlign.CENTER,
       },
       maxWidth: width,
+      maxHeight: height,
     });
 
     const buffer = await image.getBuffer("image/jpeg", { quality: 50 });

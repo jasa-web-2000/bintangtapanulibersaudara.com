@@ -43,8 +43,8 @@ export function TravelGridItem({ data }: { data: data | null }) {
           src={`/travel/${data?.origin?.id}/${data?.destination?.id}/thumbnail.jpg`}
           alt={title}
           title={title}
-          width={600}
-          height={337.5}
+          width={1300}
+          height={731}
         />
         <span className="absolute top-0 bg-indigo-500 text-slate-300 font-semibold p-1 px-2 text-xs rounded-br-lg rounded-tl-lg">
           Unggulan
