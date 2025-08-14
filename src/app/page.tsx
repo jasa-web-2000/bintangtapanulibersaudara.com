@@ -22,14 +22,16 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
   },
 });
 
-export default function page() {
+export default async function page() {
+  const data = await featuredTravelData();
+
   return (
     <>
       <Hero />
 
       <div className="my-space"></div>
 
-      <Travel data={featuredTravelData} />
+      <Travel data={data} />
 
       <div className="my-space"></div>
 
