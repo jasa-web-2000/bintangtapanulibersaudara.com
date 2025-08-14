@@ -18,8 +18,8 @@ export const metadata: Promise<Metadata> = appGenerateMetadata({
   },
 });
 
-export async function featuredTravelData() {
-  return [
+export default async function page() {
+  const featuredTravelData = [
     await travel({ origin: "1471", destination: "1271" }),
     await travel({ origin: "1271", destination: "1473" }),
     await travel({ origin: "1471", destination: "1277" }),
@@ -34,17 +34,13 @@ export async function featuredTravelData() {
     await travel({ origin: "1471", destination: "1671" }),
     await travel({ origin: "1471", destination: "18" }),
   ];
-}
-
-export default async function page() {
-  const data = await featuredTravelData();
   return (
     <>
       <Hero />
 
       <div className="my-space"></div>
 
-      <Travel data={data} />
+      <Travel data={featuredTravelData} />
     </>
   );
 }
