@@ -47,7 +47,7 @@ export async function GET(
   const sitemapIndexes = data
     .filter((e) => e.id !== origin)
     .map((item) => ({
-      url: `${appConfig.APP_URL}/travel/${origin}/${item.id}/sitemap.xml`,
+      url: `${appConfig.APP_URL}/travel/${origin}/${item.id}`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
       priority: 1,

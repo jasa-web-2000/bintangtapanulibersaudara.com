@@ -3,25 +3,33 @@ import Link from "next/link";
 import { Logo, navItem } from "@/components";
 import { ChevronRight, MapPin, MessageCircleMore, Phone } from "lucide-react";
 
-const contactItem = [
-  {
-    href: appConfig.LINK_ADDRESS,
-    label: appConfig.ADDRESS,
-    icon: MapPin,
-  },
-  {
-    href: `tel:${appConfig.TELPHONE.replace(/\D/g, "").replace(/^62?/, "62")}`,
-    label: appConfig.TELPHONE,
-    icon: Phone,
-  },
-  {
-    href: whatsapp(),
-    label: appConfig.TELPHONE,
-    icon: MessageCircleMore,
-  },
-];
-
 export function Footer() {
+  const contactItem = [
+    {
+      href: appConfig.LINK_ADDRESS,
+      label: appConfig.ADDRESS,
+      icon: MapPin,
+    },
+    {
+      href: `tel:${appConfig.TELPHONE.replace(/\D/g, "").replace(
+        /^62?/,
+        "62"
+      )}`,
+      label: appConfig.TELPHONE,
+      icon: Phone,
+    },
+    {
+      href: whatsapp(),
+      label: appConfig.TELPHONE,
+      icon: MessageCircleMore,
+    },
+  ];
+
+  const url = [
+    ...navItem,
+    ["/sitemap.xml", "Sitemap"],
+    ["/dummy-sitemap", "Dummy Sitemap"],
+  ];
   return (
     <>
       <div className="my-space "></div>
@@ -42,7 +50,7 @@ export function Footer() {
             <div className="sm:col-span-1 md:col-span-2">
               <h3 className="light">Laman</h3>
               <div className="footerList">
-                {navItem.map((e, i) => (
+                {url.map((e, i) => (
                   <Link
                     key={i}
                     href={e[0]}
