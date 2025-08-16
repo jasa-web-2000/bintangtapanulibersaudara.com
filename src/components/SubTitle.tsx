@@ -6,7 +6,7 @@ export function SubTitle({
   type,
 }: {
   subTitle: string;
-  paragraph?: string;
+  paragraph?: string | React.ReactNode;
   type?: string;
 }) {
   return (
