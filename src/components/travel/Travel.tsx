@@ -23,7 +23,7 @@ export function Travel({ data }: { data: (Data | undefined)[] }) {
               href="https://jasatravel.web.id"
               title="jasa travel terbaik">
               jasa travel terbaik
-            </Link>
+            </Link>{" "}
             rute se-Sumatera dan memiliki beberapa rute utama seperti:
           </>
         }
