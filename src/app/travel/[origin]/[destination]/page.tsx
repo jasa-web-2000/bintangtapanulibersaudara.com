@@ -112,8 +112,8 @@ export default async function page({ params }: ParamsTravel) {
           <h2>Kelebihan Jasa {title} Dibandingkan Transportasi Umum?</h2>
           <p>
             Meskipun tersedia berbagai moda transportasi seperti bus, jasa
-            travel memiliki beberapa keunggulan yang membuatnya semakin populer
-            di kalangan masyarakat:
+            travel mobil memiliki beberapa keunggulan yang membuatnya semakin
+            populer di kalangan masyarakat:
           </p>
           <h3>Layanan Door to Door</h3>
           <p>
@@ -129,8 +129,9 @@ export default async function page({ params }: ParamsTravel) {
           </p>
           <h3>Kenyamanan Lebih</h3>
           <p>
-            Armada travel kami terdiri dari kendaraan yang bersih, terawat, dan
-            ber-AC. Jumlah penumpang pun dibatasi agar perjalanan lebih nyaman.
+            Armada atau mobil {title} kami terdiri dari kendaraan yang bersih,
+            terawat, dan ber-AC. Jumlah penumpang pun dibatasi agar perjalanan
+            lebih nyaman.
           </p>
           <h3>Supir Profesional</h3>
           <p>
@@ -180,7 +181,7 @@ export default async function page({ params }: ParamsTravel) {
                 </li>
               ))}
           </ul>
-          <h2>Cara Pesan Travel</h2>
+          <h2>Cara Pesan {title}</h2>
           <Cta />
           <p>
             Proses pemesanan travel Sumatera kini jauh lebih mudah dan tanpa
