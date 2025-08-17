@@ -1,6 +1,6 @@
 import { appConfig, whatsapp } from "@/lib";
 import Link from "next/link";
-import { Logo, navItem } from "@/components";
+import { ChatWhatsapp, Logo, navItem } from "@/components";
 import { ChevronRight, MapPin, MessageCircleMore, Phone } from "lucide-react";
 
 export function Footer() {
@@ -64,13 +64,7 @@ export function Footer() {
             {/* Kontak */}
             <div className="sm:col-span-1 md:col-span-4">
               <h3 className="light">Kontak</h3>
-              <Link
-                target="_blank"
-                className="bg-gradient-to-bl hover:from-green-600 hover:to-green-800 from-green-700 to-green-900 rounded-full fixed right-5 bottom-5 p-3 shadow z-[999] hover:rotate-12 duration-300"
-                href={whatsapp()}
-                title="whatsapp">
-                <MessageCircleMore className="text-slate-50 w-8 h-8" />
-              </Link>
+              <ChatWhatsapp />
               <div className="footerList">
                 {contactItem.map((item, index) => (
                   <Link

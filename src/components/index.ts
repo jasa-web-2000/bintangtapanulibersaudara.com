@@ -11,3 +11,4 @@ export * from "./TravelGrid";
 export * from "./TravelGridItem";
 export * from "./Cta";
 export * from "./DummySitemap";
+export * from "./ChatWhatsapp";
