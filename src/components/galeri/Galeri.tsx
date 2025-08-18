@@ -2,7 +2,6 @@ import React from "react";
 import { SubTitle } from "@/components";
 import Image from "next/image";
 import { appConfig } from "@/lib";
-import Link from "next/link";
 
 export function Galeri() {
   const galeri = [
@@ -45,7 +44,7 @@ export function Galeri() {
               key={i}>
               {e.map((ee, ii) => {
                 return (
-                  <Link
+                  <a
                     href={ee[0]}
                     key={ii}
                     title={`Galeri ${index}`}>
@@ -57,7 +56,7 @@ export function Galeri() {
                       width={400}
                       height={400}
                     />
-                  </Link>
+                  </a>
                 );
               })}
             </div>
