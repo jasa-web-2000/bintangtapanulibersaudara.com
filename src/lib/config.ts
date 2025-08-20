@@ -33,8 +33,8 @@ export const appConfig: AppConfig = {
   APP_NAME: APP_NAME,
   ALTERNATE_NAME: ["CV. BTB", "B-T-B", APP_NAME],
   APP_TAGLINE: "Travel Pekanbaru Sibolga Terbaik",
-  // TELPHONE: "+62 813-1544-403",
-  TELPHONE: "+62 882-1453-5126",
+  TELPHONE: "+62 813-1544-403",
+  // TELPHONE: "+62 882-1453-5126",
   EMAIL: "admin@bintangtapanulibersaudara.com",
   ADDRESS:
     "Jl. Garuda Sakti KM 6, Gang Kartini No. 5, Desa Karya Indah, Kec. Tapung, Kabupaten Kampar, Riau, 28464",
